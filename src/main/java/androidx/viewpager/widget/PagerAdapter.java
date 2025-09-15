@@ -165,7 +165,7 @@ public abstract class PagerAdapter {
      *
      * @deprecated Use {@link #startUpdate(ViewGroup)}
      */
-    @Deprecated
+    //@Deprecated
     public void startUpdate(@NonNull View container) {
     }
 
@@ -182,7 +182,7 @@ public abstract class PagerAdapter {
      *
      * @deprecated Use {@link #instantiateItem(ViewGroup, int)}
      */
-    @Deprecated
+    //@Deprecated
     @NonNull
     public Object instantiateItem(@NonNull View container, int position) {
         throw new UnsupportedOperationException(
@@ -201,7 +201,7 @@ public abstract class PagerAdapter {
      *
      * @deprecated Use {@link #destroyItem(ViewGroup, int, Object)}
      */
-    @Deprecated
+    //@Deprecated
     public void destroyItem(@NonNull View container, int position, @NonNull Object object) {
         throw new UnsupportedOperationException("Required method destroyItem was not overridden");
     }
@@ -217,7 +217,7 @@ public abstract class PagerAdapter {
      *
      * @deprecated Use {@link #setPrimaryItem(ViewGroup, int, Object)}
      */
-    @Deprecated
+    //@Deprecated
     public void setPrimaryItem(@NonNull View container, int position, @NonNull Object object) {
     }
 
@@ -230,7 +230,7 @@ public abstract class PagerAdapter {
      *
      * @deprecated Use {@link #finishUpdate(ViewGroup)}
      */
-    @Deprecated
+    //@Deprecated
     public void finishUpdate(@NonNull View container) {
     }
 
