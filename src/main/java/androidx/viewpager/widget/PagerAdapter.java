@@ -1,3 +1,18 @@
+//start - license
+/*
+ * Copyright (c) 2025 Ashera Cordova
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ */
+//end - license
 /*
  * Copyright 2018 The Android Open Source Project
  *
@@ -85,12 +100,12 @@ public abstract class PagerAdapter {
     public static final int POSITION_UNCHANGED = -1;
     public static final int POSITION_NONE = -2;
 
-    /**
+   /**
      * Return the number of views available.
      */
     public abstract int getCount();
 
-    /**
+   /**
      * Called when a change in the shown pages is going to start being made.
      * @param container The containing View which is displaying this adapter's
      * page views.
@@ -100,7 +115,7 @@ public abstract class PagerAdapter {
         startUpdate((View) container);
     }
 
-    /**
+   /**
      * Create the page for the given position.  The adapter is responsible
      * for adding the view to the container given here, although it only
      * must ensure this is done by the time it returns from
@@ -117,7 +132,7 @@ public abstract class PagerAdapter {
         return instantiateItem((View) container, position);
     }
 
-    /**
+   /**
      * Remove a page for the given position.  The adapter is responsible
      * for removing the view from its container, although it only must ensure
      * this is done by the time it returns from {@link #finishUpdate(ViewGroup)}.
@@ -132,7 +147,7 @@ public abstract class PagerAdapter {
         destroyItem((View) container, position, object);
     }
 
-    /**
+   /**
      * Called to inform the adapter of which item is currently considered to
      * be the "primary", that is the one show to the user as the current page.
      * This method will not be invoked when the adapter contains no items.
@@ -147,7 +162,7 @@ public abstract class PagerAdapter {
         setPrimaryItem((View) container, position, object);
     }
 
-    /**
+   /**
      * Called when the a change in the shown pages has been completed.  At this
      * point you must ensure that all of the pages have actually been added or
      * removed from the container as appropriate.
@@ -158,7 +173,7 @@ public abstract class PagerAdapter {
         finishUpdate((View) container);
     }
 
-    /**
+   /**
      * Called when a change in the shown pages is going to start being made.
      * @param container The containing View which is displaying this adapter's
      * page views.
@@ -169,7 +184,7 @@ public abstract class PagerAdapter {
     public void startUpdate(@NonNull View container) {
     }
 
-    /**
+   /**
      * Create the page for the given position.  The adapter is responsible
      * for adding the view to the container given here, although it only
      * must ensure this is done by the time it returns from
@@ -189,7 +204,7 @@ public abstract class PagerAdapter {
                 "Required method instantiateItem was not overridden");
     }
 
-    /**
+   /**
      * Remove a page for the given position.  The adapter is responsible
      * for removing the view from its container, although it only must ensure
      * this is done by the time it returns from {@link #finishUpdate(View)}.
@@ -206,7 +221,7 @@ public abstract class PagerAdapter {
         throw new UnsupportedOperationException("Required method destroyItem was not overridden");
     }
 
-    /**
+   /**
      * Called to inform the adapter of which item is currently considered to
      * be the "primary", that is the one show to the user as the current page.
      *
@@ -221,7 +236,7 @@ public abstract class PagerAdapter {
     public void setPrimaryItem(@NonNull View container, int position, @NonNull Object object) {
     }
 
-    /**
+   /**
      * Called when the a change in the shown pages has been completed.  At this
      * point you must ensure that all of the pages have actually been added or
      * removed from the container as appropriate.
@@ -234,7 +249,7 @@ public abstract class PagerAdapter {
     public void finishUpdate(@NonNull View container) {
     }
 
-    /**
+   /**
      * Determines whether a page View is associated with a specific key object
      * as returned by {@link #instantiateItem(ViewGroup, int)}. This method is
      * required for a PagerAdapter to function properly.
@@ -245,7 +260,7 @@ public abstract class PagerAdapter {
      */
     public abstract boolean isViewFromObject(@NonNull View view, @NonNull Object object);
 
-    /**
+   /**
      * Save any instance state associated with this adapter and its pages that should be
      * restored if the current UI state needs to be reconstructed.
      *
@@ -256,7 +271,7 @@ public abstract class PagerAdapter {
         return null;
     }
 
-    /**
+   /**
      * Restore any instance state associated with this adapter and its pages
      * that was previously saved by {@link #saveState()}.
      *
@@ -266,7 +281,7 @@ public abstract class PagerAdapter {
     public void restoreState(@Nullable Parcelable state, @Nullable ClassLoader loader) {
     }
 
-    /**
+   /**
      * Called when the host view is attempting to determine if an item's position
      * has changed. Returns {@link #POSITION_UNCHANGED} if the position of the given
      * item has not changed or {@link #POSITION_NONE} if the item is no longer present
@@ -285,7 +300,7 @@ public abstract class PagerAdapter {
         return POSITION_UNCHANGED;
     }
 
-    /**
+   /**
      * This method should be called by the application if the data backing this adapter has changed
      * and associated views should update.
      */
@@ -298,7 +313,7 @@ public abstract class PagerAdapter {
         mObservable.notifyChanged();
     }
 
-    /**
+   /**
      * Register an observer to receive callbacks related to the adapter's data changing.
      *
      * @param observer The {@link r.android.database.DataSetObserver} which will receive callbacks.
@@ -307,7 +322,7 @@ public abstract class PagerAdapter {
         mObservable.registerObserver(observer);
     }
 
-    /**
+   /**
      * Unregister an observer from callbacks related to the adapter's data changing.
      *
      * @param observer The {@link r.android.database.DataSetObserver} which will be unregistered.
@@ -322,7 +337,7 @@ public abstract class PagerAdapter {
         }
     }
 
-    /**
+   /**
      * This method may be called by the ViewPager to obtain a title string
      * to describe the specified page. This method may return null
      * indicating no title for this page. The default implementation returns
@@ -336,7 +351,7 @@ public abstract class PagerAdapter {
         return null;
     }
 
-    /**
+   /**
      * Returns the proportional width of a given page as a percentage of the
      * ViewPager's measured width from (0.f-1.f]
      *
